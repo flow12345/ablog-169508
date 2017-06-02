@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<head>
+  <style type="text/css">
+    h2 {
+      font-size: 2em;
+    }
+
+    label {
+      font-size: 1.5em;
+    }
+
+    .subject {
+      width: 500px;
+      height: 30px;
+      margin-bottom: 20px;
+      font-size: 1.2em;
+    }
+
+    .content {
+      width: 800px;
+      height: 400px;
+      margin-bottom: 30px;
+      font-size: 1em;
+    }
+    .error {
+      color: red;
+      font-size: 1.5em;
+    }
+    input[type="submit"] {
+    font-size: 1.5em;
+}
+
+  button {
+    font-size: 1.5em;
+  }
+  </style>
+</head>
+  <h2>edit post</h2>
+  
+
+    <form method="post">
+      <label>
+        <div>subject</div>
+        <input class = "subject" type="text" name="subject" value="{{subject}}">
+      </label>
+
+      <label>
+        <div>blog</div>
+        <textarea class = "content" name="content">{{content}}</textarea>
+      </label>
+
+      <div class="error">{{error}}</div>
+
+      <input type="submit">
+      <a href="/dashboard">
+        <button type="button">Cancel</button>
+        </form>
+    
+{% endblock %}

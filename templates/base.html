@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link type="text/css" rel="stylesheet" href="/static/main.css" />
+  <link href="https://fonts.googleapis.com/css?family=Righteous" rel="stylesheet">
+  <style type="text/css">
+
+    body {
+      width: 80%;
+      margin: auto;
+      margin-top: 50px;
+      font-family: 'Righteous', cursive;
+    }
+    .header .main-title{
+      font-size: 1.3em;
+    }
+
+    .Welcome {
+      font-size: 3em;
+      text-align: center;
+      margin-top: 30px;
+    }
+
+
+    
+  </style>
+
+  <title>A Blog</title>
+</head>
+
+<body>
+  <div class="header">
+    <a href="/dashboard" class="main-title">
+      A Blog    
+    </a>
+
+      {% if user %}
+    <div class="login-area">
+      <a href="/blog/newpost" class="main-title">
+        Create New Post
+      </a>
+      |
+      <a href="/logout" class="main-title">
+        Logout     
+      </a>
+      <br>
+
+    <div class="Welcome">
+      Welcome {{user.name}} to 'a blog'
+      
+
+    </div>     
+
+      {% else %}
+      <br>
+        <a class="main-title" href="/login">login</a>
+        |
+        <a class="main-title" href="/signup">signup</a>
+
+      {% endif %}
+
+    </div>
+  </div>
+  <br>
+    <div id="content">
+    {% block content %}
+    {% endblock %}
+    </div>
+</body>
+
+</html>
+

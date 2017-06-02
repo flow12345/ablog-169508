@@ -1,0 +1,58 @@
+<style>
+.panel-body{
+  letter-spacing: 0.1em; ;
+}
+
+</style>
+
+<div class="post">
+    <div class="panel panel-default" style="box-shadow: 0px 2px 25px rgba(0, 0, 0, .1);">
+        <div class="panel-body">
+            <h3>
+                <a href="/blog/{{ p.key().id() }}" style="text-decoration:none;">
+                     <strong>{{p.subject}}</strong>
+                </a> 
+               
+            
+
+            <a href="#" style="text-decoration:none; color:grey;">
+            <i>
+                <i class="fa fa-clock-o" aria-hidden="true">  
+            </i>
+            <small>by {{p.user_name}} ({{p.created.strftime("%b %d, %Y")}})</small>
+            </i>
+            </a>
+            
+            
+            </h3>
+
+
+            <hr>
+
+            <div class="post-content">
+                {{p._render_text | safe}}
+            </div>
+        </div>
+     
+
+            
+            <div>
+                <div>
+                    <a href="/blog/edit/{{p.key().id()}}">
+                        <button type="button"> Edit </button> 
+                    </a> 
+
+                    <a href="/blog/delete/{{p.key().id()}}">
+                        <button type="button">Delete</button> 
+                    </a>
+                </div>
+            </div>
+            
+           
+        </div>
+
+            
+               
+</div>
+
+

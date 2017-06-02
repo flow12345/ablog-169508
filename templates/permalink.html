@@ -1,0 +1,86 @@
+
+{% extends "base.html" %}
+
+{% block content %}
+
+<div class="error">{{error}}</div>
+      
+        {{post.render() | safe}}
+
+
+<head>
+	<style type="text/css">
+		.comment a {
+			text-decoration: none;
+			color: black;
+		}
+
+		.error {
+			color: red;
+			font-size: 1.5em;
+		}
+	</style>
+</head>
+
+        <hr>
+        <div>
+          <div class="pull-right">
+              <input type="hidden" class="form-control" id="like" name="like" value="update">
+              <a href="/blog/{{ post.key().id() }}/like">
+                <button type="submit"> Like {{post.likes}}</button>  
+              </a>
+                            
+          </div>
+          <br>
+
+
+
+        <div class="media-body">
+            <form action="/blog/{{post.key().id()}}/newcomment" method="POST">
+            
+                <input type="text" class="form-control" rows="1" placeholder="Write a comment" name="comment" style="width: 630px; ">
+                <br>
+
+                <button type="submit"> Post Comment</button>
+            </form>            
+        </div>
+        <br>
+        <br>
+        <div>
+
+
+        {% if comments_count == 1 %}
+              <label style="text-decoration: underline;">{{comments_count}} comment:</label>
+        {% else %}
+              <label style="text-decoration: underline">{{comments_count}} comments:</label>
+        {% endif %}
+        <br>
+		
+        {% for c in comments %}
+
+
+          <div class="comment" style="font-style: italic; font-weight: 100; pointer-events: none; text-decoration: none !important; -webkit-appearance: none; ">
+               <br>
+              {{c.comment}}
+              <br>
+
+              <a href="#" style="text-decoration:none; color:grey;"><i><i class="fa fa-clock-o" aria-hidden="true"></i>by {{c.commentor}} on {{c.created.strftime("%b %d, %Y")}}</i></a>
+          </div>
+
+           <div>
+                <div>
+                    <a href="/blog/{{post.key().id()}}/comment/{{c.key().id()}}/edit">
+                    <button type="button"> Edit</button></a>
+                    <a href="/blog/{{post.key().id()}}/comment/{{c.key().id()}}/delete"><button type="button"> Delete</button></a>
+                </div>
+          </div>
+          <br>
+
+          {% endfor %}      
+        </div>
+    </div>
+    <div class="col-md-2"></div>    
+  </div>
+  
+</div>
+{% endblock %}

@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Sign Up</title>
+
+    <link href="https://fonts.googleapis.com/css?family=Barrio" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/static/main.css">
+
+    <style type="text/css">
+      body {  
+      background: url(http://maxpixel.freegreatpicture.com/static/photo/1x/Food-Color-Christmas-Branch-Flora-Close-up-Blur-2178295.jpg);
+      background-size: 100%;
+      background-repeat: no-repeat;
+      border-radius: 8px;
+      margin-top: -400px;
+      left: 50%;
+      top: 50%;
+      position: absolute;
+      transform: translateX(-50%);
+      font-family: 'Barrio', cursive;
+      text-align: center;
+      
+
+
+    }
+
+      table {
+        font-size: 2.5em;
+      }
+
+      h1#signup-form {
+        font-weight: bold;
+        font-size: 3.5em;
+      }
+
+      .signup-box {
+        background-color: white;
+        margin-left: 700px;
+        border-top-width: 10px;
+        margin-top: 100px;
+        margin-bottom: 30px;
+        height: 500px;
+        width: 700px;
+        padding-top: 15px;
+        border-radius: 25px;
+        padding-left:20px;
+        background: rgba(255,255,255, 0.7);
+
+      }
+
+      input {
+        height:30px;
+        width: 300px;
+        margin-left: 25px;
+        margin-bottom: 15px;
+      }
+      tr #signup-form{
+        height: 40px;
+      }
+
+      .bg-welcome {
+        background: rgba(255,255,255, 1.0);
+      }
+
+      .welcome {
+        font-size: 5em;
+      }
+      .label {
+        text-align: right;
+        padding-bottom: 10px;
+      }
+      .error {color: red;
+        font-size: 0.5em;
+      }
+
+  </style>
+  </head>
+  
+
+  <body >
+    <div class="bg-welcome">
+    <div class="welcome">-Welcome to 'a blog'-</div>
+    </div>
+    <div class="signup-box">  
+      <h1 id="signup-form">Signup here!!!</h1>
+      <form method="post">
+        <table>
+          <tr id="signup-form">
+            <td class="label">
+              Username
+            </td>
+            <td>
+              <input type="text" name="username" value="{{username}}">
+            </td>
+            <td class="error">
+              {{error_username}}
+            </td>
+          </tr>
+
+          <tr>
+            <td class="label">
+              Password
+            </td>
+            <td>
+              <input type="password" name="password" value="">
+            </td>
+            <td class="error">
+              {{error_password}}
+            </td>
+          </tr>
+
+          <tr>
+            <td class="label">
+              Verify Password
+            </td>
+            <td>
+              <input type="password" name="verify" value="">
+            </td>
+            <td class="error">
+              {{error_verify}}
+            </td>
+          </tr>
+
+          <tr>
+            <td class="label">
+              Email (optional)
+            </td>
+            <td>
+              <input type="text" name="email" value="{{email}}">
+            </td>
+            <td class="error">
+              {{error_email}}
+            </td>
+          </tr>
+        </table>
+
+        <input type="submit" style="height:35px; font-size:1em; margin-top:15px">
+      </form>
+
+      <br>
+      <a href="/login" class="text-center existing-account">Already have an account? Login here! </a>
+      <br>
+    </div>
+  </body>
+
+</html>

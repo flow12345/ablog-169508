@@ -1,0 +1,24 @@
+<!-- JINJA2 BASE TEMPLATES -->
+{% extends "base.html" %}
+
+{% block content %}
+
+<head>
+	<style type="text/css">
+		.error {
+			color: red;
+		}
+	</style>
+</head>
+
+    <div class="home">
+      <a class="btn btn-primary" href="/dashboard">Return to Main Page</a>
+    </div><br> 
+    
+    <div class="error">{{error}}</div>
+
+
+
+   
+
+{% endblock %}

@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<head>
+	<style type="text/css">
+	.error {
+		color: red;
+		font-size: 1.5em;
+		}
+	</style>
+	
+	
+</head>
+<br>
+		<div class="error">{{error}}</div>
+		<br>
+
+  {% for p in posts %}
+    {{ p.render() | safe }}
+    <br><br>
+  {% endfor %}
+  
+{% endblock %}

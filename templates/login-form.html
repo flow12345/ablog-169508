@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Login</title>
+    <link href="https://fonts.googleapis.com/css?family=Barrio" rel="stylesheet">
+    <link type="text/css" rel="stylesheet" href="/static/main.css">
+    <style type="text/css">
+    
+
+      body {  
+      background: url(http://www.radio1.si/img/Gallery/Photo/bl_240e95e0-b81a-415e-8714-24543b1bfb23.jpg);
+      background-size: 100%;
+      background-repeat: no-repeat;
+      border-radius: 8px;
+      margin-top: -400px;
+      left: 50%;
+      top: 50%;
+      position: absolute;
+      transform: translateX(-50%);
+      font-family: 'Barrio', cursive;
+      text-align: center;
+      color: white;
+      left: 400px;
+      width: 700px;
+      
+
+
+    }
+
+      h2 {
+        font-size: 3em;
+      }
+
+      table {
+        font-size: 2.5em;
+      }
+
+
+      input {
+        height:30px;
+        width: 300px;
+        margin-left: 25px;
+        margin-bottom: 15px;
+      }
+
+      .label {
+        text-align: right;
+        padding-bottom: 10px;
+      }
+      .error {color: red;
+        font-size: 1.5em;
+      }
+      
+      
+    </style>
+
+  </head>
+
+  <body>
+    <h2>Login here!!</h2>
+    <form method="post">
+      <table>
+        <tr>
+          <td class="label">
+            Username
+          </td>
+          <td>
+            <input type="text" name="username" value="{{username}}">
+          </td>
+        </tr>
+
+        <tr>
+          <td class="label">
+            Password
+          </td>
+          <td>
+            <input type="password" name="password" value="">
+          </td>
+        </tr>
+      </table>
+
+      <div class="error">
+        {{error}}
+      </div>
+
+      <input type="submit">
+    </form>
+
+    <a href="/signup" class="text-center new-account" style="color: white">Need an account? Create one!</a>
+  </body>
+
+</html>

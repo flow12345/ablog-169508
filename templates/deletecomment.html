@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+
+{% block content %}
+<head>
+    <!-- <meta http-equiv = "refresh" content = "0"> -->
+</head>
+{{error}}
+<div class="container">
+    <div class="row">        
+        <div>
+            <div>{{ error }}</div>
+            <div>
+                <img class="img-fluid" src="https://vignette3.wikia.nocookie.net/criminal-case-grimsborough/images/b/b1/Delete_Icon.png" alt="Responsive image">
+                <br>
+                <br>
+            </div>
+            <div>
+                <button onclick="GoBackWithRefresh()">[Go Back]</button>
+
+                <script type="text/javascript">
+                    function GoBackWithRefresh(event) {
+    if ('referrer' in document) {
+        window.location = document.referrer;
+        /* OR */
+        //location.replace(document.referrer);
+    } else {
+        window.history.back();
+    }
+}
+                </script>
+                    
+                
+            </div>
+        </div>        
+    </div>
+</div>
+{% endblock %}
